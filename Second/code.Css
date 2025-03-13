@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mona Sans",sans-serif;
+}
+section{
+    background-color: #252525;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-container{
+    width: 320px;
+    height: 480px;
+    background-color: #1E1E1E;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.product-container::before{
+    position: absolute;
+    content: '';
+    top: -50%;
+    background-color: #FBCF00;
+    transform: skewY(345deg);
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    transition: all 0.30s ease-in ;
+}
+.product-container:hover::before{
+    transform: skewY(390deg);
+    top: -70%;
+}
+.product-container::after{
+    content: "CORSAIR";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 6em;
+    color: rgba(0, 0, 0, 0.1);
+}
+.img-container{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    z-index: 1;
+    transform: scale(1.5);
+    margin-bottom: 50px;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+}
+h3{
+    font-size: 22px;
+    color: white;
+    font-weight: 500;
+}
+h2{
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+}
+a{
+    color:black;
+    text-decoration: none;
+    background-color: #FBCF00;
+    border-radius: 25px;
+    padding: 5px 25px;
+    z-index: 1;
+    font-weight: 500;
+    transform: translateY(100px);
+    transition: all ease 0.3s;
+    font-size: 20px;
+    text-align:center ;
+}
+.product-container:hover a{
+    transform: translateY(30px);
+}
