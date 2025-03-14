@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Mona Sans", sans-serif ;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #181818;
+    position: relative;
+}
+.container{
+    width: 320px;
+    height: 450px;
+    background-color: #282828;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.container::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0 ;
+    background-color: #3EC0EA;
+    position: absolute;
+    clip-path: circle(150px at 80% 20%);
+    z-index: 10;
+    transition: all ease 1s;
+
+}
+.container::after{
+    content: "Nike";
+    position: absolute;
+    top: 30%;
+    left: -20%;
+    font-weight: 800;
+    font-size: 12em;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.1);
+}
+.container:hover::before{
+    clip-path: circle(300px at 80% -15%);
+}
+.image-container{
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all ease 1s;
+}
+.container:hover .image-container{
+    top: 30%;
+}
+.image-container img{
+    width: 270px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(20deg);
+}
+.content-box{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: all ease 1s;
+}
+.content-box h2{
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 600;
+    position: relative;
+
+}
+.container:hover .content-box{
+    bottom: 23%;
+}
+.size,
+.color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    opacity: 0;
+    transition: 1s;
+}
+.size{
+    transition-delay: 0.15s;
+}
+.color{
+    transition-delay: 0.2s;
+}
+.container:hover .size,
+.container:hover .color{
+    opacity: 1;
+}
+.size span{
+    border-radius: 3px;
+    background-color: rgb(252, 252, 252);
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+}
+.color h3,
+.size h3{
+    color: white;
+    font-weight: 300;
+    font-size: 20px;
+    margin-right: 15px;
+}
+.color span{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+a{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: rgb(252, 252, 252);
+    color: black;
+    font-weight: 500;
+    margin-top: 10px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: .5s;
+}
+.container:hover .content-box a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: .4s;
+} 
